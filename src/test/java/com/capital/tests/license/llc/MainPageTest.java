@@ -1,13 +1,11 @@
-package com.capital.tests.license.cysec;
+package com.capital.tests.license.llc;
 
 import com.capital.pageObject.MainPage;
-import io.qameta.allure.Flaky;
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class MainPageTest extends BeAfAllCYSEC {
+public class MainPageTest extends BeAfAllLLC {
     MainPage mainPage = new MainPage();
 
     @Test

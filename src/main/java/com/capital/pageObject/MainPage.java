@@ -20,8 +20,12 @@ public class MainPage {
     private static final SelenideElement BANNER_PRO_ASIC = $(byXpath("//button[@data-type='topbanner_pro_au_slider']"));
     private static final SelenideElement BANNER_PRO_START_TRADING = $(byXpath("//a[@data-type='topbanner_pro_au_demo']"));
     //
-    // CYSEC
-    private static final SelenideElement SCROLL_ELM = $(byCssSelector(".bannersHome__nav.flex.flex-between.js-bannersHome-nav"));
+    // FCA
+    private static final SelenideElement BANNER_SPREAD_BETTING = $(byXpath("//button[@data-type='topbanner_spread_betting_slider']"));
+    private static final SelenideElement BANNER_SPREAD_BETTING_OPEN_ACC = $(byXpath("//a[@data-type='topbanner_spread_betting']"));
+    //
+    // CYSEC and all
+    private static final SelenideElement SCROLL_ELM_BANNER = $(byCssSelector(".bannersHome__nav.flex.flex-between.js-bannersHome-nav"));
 
     private static final SelenideElement BANNER_CFD = $(byXpath("//button[@data-type='topbanner_cfd_slider']"));
     private static final SelenideElement BANNER_CFD_BTN_TRADE_NOW = $(byXpath("//a[@data-type='topbanner_cfd']"));
@@ -56,6 +60,25 @@ public class MainPage {
     private static final SelenideElement TABS_NAV_FX = $(byXpath("//li[@data-tab-control='fx']"));
     private static final SelenideElement TABS_NAV_ETF = $(byXpath("//li[@data-tab-control='etf']"));
 
+    private static final SelenideElement SCROLL_ELM_STILL_LOOKING = $(byCssSelector(".regSteps.cc-boxLg.mainConstuctor__item.mainConstuctor__item--fullwidth.grey"));
+    private static final SelenideElement CREATE_SL_BTN = $(byCssSelector(".regSteps__item.js_signup"));
+
+    private static final SelenideElement SCROLL_ELM_EXP_OUR = $(byCssSelector(".c-lg-5.c-md-6"));
+    private static final SelenideElement EXP_OUR_PL_TRYN_BTN = $(byXpath("//div[@class='alignCenterToLeft js-analyticsVisible']/a[contains(text(),'Try now')]"));
+
+    private static final SelenideElement SCROLL_ELM_PRACTISE_FF = $(byCssSelector(".cc-boxXl.newToTrading.grey"));
+    private static final SelenideElement NEW_TO_TR_PRACTISE_FF_BTN = $(byCssSelector(".btn.js_signup.__cp_b.js-analyticsVisible"));
+
+    private static final SelenideElement SCROLL_ELM_CALC = $(byCssSelector(".tradingCalc__graph.gapSm"));
+    private static final SelenideElement CALC_START_TR_BTN = $(byCssSelector(".btn.btn--nowrap.btn--darkText.js_signup_new"));
+
+    private static final SelenideElement SCROLL_ELM_TRAD_DASHB = $(byCssSelector(".btn.btn--nowrap.btn--darkText.js_signup_new"));
+    private static final ElementsCollection COLLECTION_TRAD_DASHB_TRADE_BTN = $$(byCssSelector(".tradersDashboard__btn.btn.btn--empty.js_signup"));
+
+//    private static final SelenideElement SCROLL_ELM_WHY_CHOOSE = $(byCssSelector(".cc-boxXl.cc-counter.js-counter.dark"));
+    private static final SelenideElement SCROLL_ELM_WHY_CHOOSE = $(byCssSelector(".promoApps__content"));
+    private static final SelenideElement WHY_CHOOSE_TRYN_BTN = $(byCssSelector(".btn.btn--empty.cc-counter__btn.js_signup.__cp_bs.ln-auto.js-analyticsVisible"));
+
 
     // для ASIC
     @Step("Выбор банера CFD")
@@ -81,6 +104,17 @@ public class MainPage {
     @Step("Клик по кнопке Start Trading")
     public void clickBtnSTPRO (){
         BANNER_PRO_START_TRADING.click();
+    }
+    //
+    // для FCA
+    @Step("Выбор банера CFD")
+    public void choiceBannerSpreadBetting (){
+        BANNER_SPREAD_BETTING.click();
+    }
+
+    @Step("Клик по кнопке Trade Now")
+    public void clickBtnOpenAccount (){
+        BANNER_SPREAD_BETTING_OPEN_ACC.click();
     }
     //
 
@@ -114,6 +148,46 @@ public class MainPage {
         BANNER_BEST_PLATFORM_PRACTISE_FOR_FREE.click();
     }
 
+    @Step("Клик по кнопке Create")
+    public void clickBtnCreateStillLookingFor  (){
+        SCROLL_ELM_STILL_LOOKING.scrollTo();
+        CREATE_SL_BTN.click();
+    }
+
+    @Step("Клик по кнопке Try Now")
+    public void clickBtnTryNowExploreOurPlatform(){
+        SCROLL_ELM_EXP_OUR.scrollTo();
+        EXP_OUR_PL_TRYN_BTN.shouldNotBe(Condition.hidden).click();
+    }
+
+    @Step("Клик по кнопке Practise for free")
+    public void clickBtnPractiseForFreeNewToTrading(){
+        SCROLL_ELM_PRACTISE_FF.scrollTo();
+        NEW_TO_TR_PRACTISE_FF_BTN.click();
+    }
+
+    @Step("Клик по кнопке Start Trading")
+    public void clickBtnStartTradingCalc(){
+        SCROLL_ELM_CALC.scrollTo();
+        CALC_START_TR_BTN.click();
+    }
+
+    @Step("Проверка кнопок Trade у баннера Trader's Dashboard")
+    public void checkTradeBtnTrDashb () {
+        SCROLL_ELM_TRAD_DASHB.scrollTo();
+        for (SelenideElement selenideElement : COLLECTION_TRAD_DASHB_TRADE_BTN) {
+            selenideElement.click();
+            CHECK_SING_UP_FORM.shouldBe(Condition.visible);
+            CLOSE_SING_UP_FORM.click();
+        }
+    }
+
+    @Step("Клик по кнопке Try Now")
+    public void clickBtnTryNowWhyCapCom(){
+        SCROLL_ELM_WHY_CHOOSE.scrollTo();
+        WHY_CHOOSE_TRYN_BTN.click();
+    }
+
     @Step("Появление поля SignUp")
     public void checkSingUpForm() {
         CHECK_SING_UP_FORM.shouldBe(Condition.visible);
@@ -121,7 +195,7 @@ public class MainPage {
 
     @Step("Проверка вкладки Most Traded")
     public void checkTabsNav_MTR () {
-        SCROLL_ELM.scrollTo();
+        SCROLL_ELM_BANNER.scrollTo();
         TABS_NAV_MTR.click();
         for (SelenideElement selenideElement : COLLECTION_TRADE) {
                 selenideElement.click();
@@ -131,7 +205,7 @@ public class MainPage {
     }
     @Step("Проверка вкладки Commodities")
     public void checkTabsNav_COM () {
-        SCROLL_ELM.scrollTo();
+        SCROLL_ELM_BANNER.scrollTo();
         TABS_NAV_COM.click();
         for (SelenideElement selenideElement : COLLECTION_TRADE) {
                 selenideElement.click();
@@ -141,7 +215,7 @@ public class MainPage {
     }
     @Step("Проверка вкладки Indices")
     public void checkTabsNav_IND () {
-        SCROLL_ELM.scrollTo();
+        SCROLL_ELM_BANNER.scrollTo();
         TABS_NAV_IND.click();
         for (SelenideElement selenideElement : COLLECTION_TRADE) {
                 selenideElement.click();
@@ -151,7 +225,7 @@ public class MainPage {
     }
     @Step("Проверка вкладки Crypto")
     public void checkTabsNav_CRYP () {
-        SCROLL_ELM.scrollTo();
+        SCROLL_ELM_BANNER.scrollTo();
         TABS_NAV_CRYP.click();
         for (SelenideElement selenideElement : COLLECTION_TRADE) {
                 selenideElement.click();
@@ -161,7 +235,7 @@ public class MainPage {
     }
     @Step("Проверка вкладки Shares")
     public void checkTabsNav_SHAR () {
-        SCROLL_ELM.scrollTo();
+        SCROLL_ELM_BANNER.scrollTo();
         TABS_NAV_SHAR.click();
         for (SelenideElement selenideElement : COLLECTION_TRADE) {
                 selenideElement.click();
@@ -171,7 +245,7 @@ public class MainPage {
     }
     @Step("Проверка вкладки Forex")
     public void checkTabsNav_FX () {
-        SCROLL_ELM.scrollTo();
+        SCROLL_ELM_BANNER.scrollTo();
         TABS_NAV_FX.click();
         for (SelenideElement selenideElement : COLLECTION_TRADE) {
                 selenideElement.click();
@@ -181,7 +255,7 @@ public class MainPage {
     }
     @Step("Проверка вкладки ETFs")
     public void checkTabsNav_ETF () {
-        SCROLL_ELM.scrollTo();
+        SCROLL_ELM_BANNER.scrollTo();
         TABS_NAV_ETF.click();
         for (SelenideElement selenideElement : COLLECTION_TRADE) {
                 selenideElement.click();
@@ -189,7 +263,5 @@ public class MainPage {
                 CLOSE_SING_UP_FORM.click();
         }
     }
-
-
 
 }

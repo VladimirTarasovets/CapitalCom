@@ -1,29 +1,18 @@
-package com.capital.tests.license.cysec;
+package com.capital.tests.license.fca;
 
 import com.capital.pageObject.MainPage;
-import io.qameta.allure.Flaky;
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class MainPageTest extends BeAfAllCYSEC {
+public class MainPageTest extends BeAfAllFCA {
     MainPage mainPage = new MainPage();
 
     @Test
-    @DisplayName("Проверка появление поля SignUp в баннере CFD при клике на кнопку Trade Now")
+    @DisplayName("Проверка появление поля SignUp в баннере Spread Betting при клике на кнопку Open Account")
     public void checkSingUP_CFD_BtnTN(){
-        mainPage.choiceBannerCFD();
-        mainPage.clickBtnTN();
-        mainPage.checkSingUpForm();
-    }
-
-    @Test
-    @DisplayName("Проверка появление поля SignUp в баннере CFD при клике на кнопку Practise for free")
-    public void checkSingUP_CFD_BtnPFF(){
-        mainPage.choiceBannerCFD();
-        mainPage.clickBtnPFF_CFD();
-        mainPage.checkSingUpForm();
+        mainPage.choiceBannerSpreadBetting();
+        mainPage.clickBtnOpenAccount();
     }
 
     @Test

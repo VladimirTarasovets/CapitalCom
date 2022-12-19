@@ -74,4 +74,46 @@ public class MainPageTest extends BeAfAllASIC {
     public void checkETF () {
         mainPage.checkTabsNav_ETF();
     }
+
+    @Test
+    @DisplayName("Проверка появление поля SignUp в баннере Still Looking For при клике на кнопку Create")
+    public void checkCreateBtn(){
+        mainPage.clickBtnCreateStillLookingFor();
+        mainPage.checkSingUpForm();
+    }
+
+    @Test
+    @DisplayName("Проверка появление поля SignUp в баннере Explore our platform при клике на кнопку Try Now")
+    public void checkTryNowBtnEOP(){
+        mainPage.clickBtnTryNowExploreOurPlatform();
+        mainPage.checkSingUpForm();
+    }
+
+    @Test
+    @DisplayName("Проверка появление поля SignUp в баннере New to trading? при клике на кнопку Practise for free")
+    public void checkPracForFreeBtnNewToTR(){
+        mainPage.clickBtnPractiseForFreeNewToTrading();
+        mainPage.checkSingUpForm();
+    }
+
+    @Test
+    @DisplayName("Проверка появление поля SignUp в баннере Calculator при клике на кнопку Start Trading")
+    public void checkStartTradBtnCalc(){
+        mainPage.clickBtnStartTradingCalc();
+        mainPage.checkSingUpForm();
+    }
+
+    @Test
+    @DisplayName("Проверка кнопок Trade у баннера Trader's Dashboard на появление поля SignUp")
+    public void checkTradeBtnTradeDashb () {
+        mainPage.checkTradeBtnTrDashb();
+    }
+
+    @Test
+    @DisplayName("Проверка появление поля SignUp в баннере Why choose Capital.com? при клике на кнопку Try Now")
+    public void checkTryNowBtnWhyCC(){
+        mainPage.clickBtnTryNowWhyCapCom();
+        mainPage.checkSingUpForm();
+    }
+
 }
