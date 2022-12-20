@@ -83,6 +83,12 @@ public class MainPageTest extends BeAfAllASIC {
     }
 
     @Test
+    @DisplayName("Проверка кнопок Trade у баннера Slider Fade на появление поля SignUp")
+    public void checkSliderFade () {
+        mainPage.checkTradeBtnSliderFade();
+    }
+
+    @Test
     @DisplayName("Проверка появление поля SignUp в баннере Explore our platform при клике на кнопку Try Now")
     public void checkTryNowBtnEOP(){
         mainPage.clickBtnTryNowExploreOurPlatform();

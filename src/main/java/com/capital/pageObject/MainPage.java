@@ -63,6 +63,9 @@ public class MainPage {
     private static final SelenideElement SCROLL_ELM_STILL_LOOKING = $(byCssSelector(".regSteps.cc-boxLg.mainConstuctor__item.mainConstuctor__item--fullwidth.grey"));
     private static final SelenideElement CREATE_SL_BTN = $(byCssSelector(".regSteps__item.js_signup"));
 
+    private static final SelenideElement SCROLL_ELM_SLIDER_FADE = $(byCssSelector(".worldMap.js-worldMap"));
+    private static final ElementsCollection SLIDER_FADE_TRADE_BTN = $$(byCssSelector(".promoMarket__col.btn.btn--darkText.btn--sm.hideXs.js_signup"));
+
     private static final SelenideElement SCROLL_ELM_EXP_OUR = $(byCssSelector(".c-lg-5.c-md-6"));
     private static final SelenideElement EXP_OUR_PL_TRYN_BTN = $(byXpath("//div[@class='alignCenterToLeft js-analyticsVisible']/a[contains(text(),'Try now')]"));
 
@@ -152,6 +155,16 @@ public class MainPage {
     public void clickBtnCreateStillLookingFor  (){
         SCROLL_ELM_STILL_LOOKING.scrollTo();
         CREATE_SL_BTN.click();
+    }
+
+    @Step("Проверка кнопок Trade у баннера Slider Fade")
+    public void checkTradeBtnSliderFade () {
+        SCROLL_ELM_SLIDER_FADE.scrollTo();
+        for (SelenideElement selenideElement : SLIDER_FADE_TRADE_BTN) {
+            selenideElement.shouldBe(Condition.visible).click();
+            CHECK_SING_UP_FORM.shouldBe(Condition.visible);
+            CLOSE_SING_UP_FORM.click();
+        }
     }
 
     @Step("Клик по кнопке Try Now")
