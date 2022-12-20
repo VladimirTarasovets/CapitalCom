@@ -24,6 +24,7 @@ public class MainPageTest extends BeAfAllASIC {
         mainPage.checkSingUpForm();
     }
 
+    @Disabled
     @Test
     @DisplayName("Проверка появление поля SignUp в банере Discover Pro Trading при клике на кнопку Start Trading")
     public void checkSingUP_BP_BtnST(){

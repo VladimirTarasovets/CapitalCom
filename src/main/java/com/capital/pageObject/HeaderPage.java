@@ -53,10 +53,12 @@ public class HeaderPage {
 
 
     private static final SelenideElement LOGIN = $(byCssSelector("#wg_loginBtn"));
+
     private static final SelenideElement TRADE_NOW = $(byCssSelector(".cc-header__signup.btn.btn--sm.btn--darkText.hideSm.js_signup"));
     private static final SelenideElement CHECK_LOGIN_FORM = $(byCssSelector("#l_f_email"));
+    private static final SelenideElement CLOSE_LOGIN_UP_FORM = $(byCssSelector(".button-cleared.small.l_cancel"));
     private static final SelenideElement CHECK_SING_UP_FORM = $(byCssSelector(".signup-form"));
-
+    private static final SelenideElement CLOSE_SING_UP_FORM = $(byCssSelector(".button-cleared.small.s_cancel"));
 
 
     @Step("Выбор языка English")
@@ -111,12 +113,14 @@ public class HeaderPage {
     public void loginFieldFormAppears (){
         LOGIN.click();
         CHECK_LOGIN_FORM.shouldBe(Condition.visible);
+        CLOSE_LOGIN_UP_FORM.click();
     }
 
     @Step("Появление поля SignUp при клике на кнопку TradeNow в header сайта")
     public void singUpFieldFormAppears (){
         TRADE_NOW.click();
         CHECK_SING_UP_FORM.shouldBe(Condition.visible);
+        CLOSE_SING_UP_FORM.click();
     }
 
 }

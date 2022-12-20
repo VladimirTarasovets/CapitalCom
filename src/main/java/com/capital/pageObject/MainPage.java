@@ -2,6 +2,7 @@ package com.capital.pageObject;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.HoverOptions;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -26,6 +27,7 @@ public class MainPage {
     //
     // CYSEC and all
     private static final SelenideElement SCROLL_ELM_BANNER = $(byCssSelector(".bannersHome__nav.flex.flex-between.js-bannersHome-nav"));
+    private static final SelenideElement SCROLL_ELM_MAIN_BANNER = $(byCssSelector(".bannersHome__wrap.cc-boxMd.grey"));
 
     private static final SelenideElement BANNER_CFD = $(byXpath("//button[@data-type='topbanner_cfd_slider']"));
     private static final SelenideElement BANNER_CFD_BTN_TRADE_NOW = $(byXpath("//a[@data-type='topbanner_cfd']"));
@@ -34,9 +36,6 @@ public class MainPage {
     private static final SelenideElement BANNER_BEST_PLATFORM = $(byXpath("//button[@data-type='topbanner_best_platform_22_slider']"));
     private static final SelenideElement BANNER_BEST_PLATFORM_START_TRADING = $(byXpath("//a[@data-type='topbanner_best_platform_22']"));
     private static final SelenideElement BANNER_BEST_PLATFORM_PRACTISE_FOR_FREE = $(byXpath("//a[@data-type='topbanner_best_platform_22_demo']"));
-
-    private static final SelenideElement BANNER_ESG = $(byXpath("//button[@data-type='topbanner_esg_slider']"));
-    private static final SelenideElement BANNER_TRADINGVIEW = $(byXpath("//button[@data-type='banner-tradingview_slider']"));
 
     private static final SelenideElement CHECK_SING_UP_FORM = $(byCssSelector(".signup-form"));
     private static final SelenideElement CLOSE_SING_UP_FORM = $(byCssSelector(".button-cleared.small.s_cancel"));
@@ -86,6 +85,7 @@ public class MainPage {
     // для ASIC
     @Step("Выбор банера CFD")
     public void choiceBannerCFD_ASIC (){
+        SCROLL_ELM_MAIN_BANNER.scrollTo();
         BANNER_CFD_ASIC.click();
     }
 
@@ -101,6 +101,7 @@ public class MainPage {
 
     @Step("Выбор банера Discover Pro Trading")
     public void choiceBannerPRO (){
+        SCROLL_ELM_MAIN_BANNER.scrollTo();
         BANNER_PRO_ASIC.click();
     }
 
@@ -112,6 +113,7 @@ public class MainPage {
     // для FCA
     @Step("Выбор банера CFD")
     public void choiceBannerSpreadBetting (){
+        SCROLL_ELM_MAIN_BANNER.scrollTo();
         BANNER_SPREAD_BETTING.click();
     }
 
@@ -123,6 +125,7 @@ public class MainPage {
 
     @Step("Выбор банера CFD")
     public void choiceBannerCFD (){
+        SCROLL_ELM_MAIN_BANNER.scrollTo();
         BANNER_CFD.click();
     }
 
@@ -138,6 +141,7 @@ public class MainPage {
 
     @Step("Выбор банера Best Platform")
     public void choiceBannerBP (){
+        SCROLL_ELM_MAIN_BANNER.scrollTo();
         BANNER_BEST_PLATFORM.click();
     }
 
@@ -164,6 +168,7 @@ public class MainPage {
             selenideElement.shouldBe(Condition.visible).click();
             CHECK_SING_UP_FORM.shouldBe(Condition.visible);
             CLOSE_SING_UP_FORM.click();
+            selenideElement.hover(HoverOptions.withOffset(0,50));
         }
     }
 
@@ -204,6 +209,7 @@ public class MainPage {
     @Step("Появление поля SignUp")
     public void checkSingUpForm() {
         CHECK_SING_UP_FORM.shouldBe(Condition.visible);
+        CLOSE_SING_UP_FORM.click();
     }
 
     @Step("Проверка вкладки Most Traded")
