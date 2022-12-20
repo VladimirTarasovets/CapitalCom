@@ -8,8 +8,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
@@ -43,21 +42,21 @@ public class MainPage {
     private static final ElementsCollection COLLECTION_TRADE = $$(byXpath("//tbody[@class='tabs__pane active']//a[@data-type='wdg_markets']"));
 
     // OLD design
-//    private static final SelenideElement TABS_NAV_MTR = $(byXpath("//div[@class='tab-list ']/a[@data-type='Most']"));
-//    private static final SelenideElement TABS_NAV_COM = $(byXpath("//div[@class='tab-list ']/a[@data-type='Commodities']"));
-//    private static final SelenideElement TABS_NAV_IND = $(byXpath("//div[@class='tab-list ']/a[@data-type='Indices']"));
-//    private static final SelenideElement TABS_NAV_CRYP = $(byXpath("//div[@class='tab-list ']/a[@data-type='Crypto']"));
-//    private static final SelenideElement TABS_NAV_SHAR = $(byXpath("//div[@class='tab-list ']/a[@data-type='Shares']"));
-//    private static final SelenideElement TABS_NAV_FX = $(byXpath("//div[@class='tab-list ']/a[@data-type='Forex']"));
-//    private static final SelenideElement TABS_NAV_ETF = $(byXpath("//div[@class='tab-list ']/a[@data-type='ETFs']"));
+    private static final SelenideElement TABS_NAV_MTR = $(byXpath("//div[@class='tab-list ']/a[@data-type='Most']"));
+    private static final SelenideElement TABS_NAV_COM = $(byXpath("//div[@class='tab-list ']/a[@data-type='Commodities']"));
+    private static final SelenideElement TABS_NAV_IND = $(byXpath("//div[@class='tab-list ']/a[@data-type='Indices']"));
+    private static final SelenideElement TABS_NAV_CRYP = $(byXpath("//div[@class='tab-list ']/a[@data-type='Crypto']"));
+    private static final SelenideElement TABS_NAV_SHAR = $(byXpath("//div[@class='tab-list ']/a[@data-type='Shares']"));
+    private static final SelenideElement TABS_NAV_FX = $(byXpath("//div[@class='tab-list ']/a[@data-type='Forex']"));
+    private static final SelenideElement TABS_NAV_ETF = $(byXpath("//div[@class='tab-list ']/a[@data-type='ETFs']"));
     // NEW design
-    private static final SelenideElement TABS_NAV_MTR = $(byXpath("//li[@data-tab-control='mtr']"));
-    private static final SelenideElement TABS_NAV_COM = $(byXpath("//li[@data-tab-control='com']"));
-    private static final SelenideElement TABS_NAV_IND = $(byXpath("//li[@data-tab-control='ind']"));
-    private static final SelenideElement TABS_NAV_CRYP = $(byXpath("//li[@data-tab-control='cryp']"));
-    private static final SelenideElement TABS_NAV_SHAR = $(byXpath("//li[@data-tab-control='shar']"));
-    private static final SelenideElement TABS_NAV_FX = $(byXpath("//li[@data-tab-control='fx']"));
-    private static final SelenideElement TABS_NAV_ETF = $(byXpath("//li[@data-tab-control='etf']"));
+//    private static final SelenideElement TABS_NAV_MTR = $(byXpath("//li[@data-tab-control='mtr']"));
+//    private static final SelenideElement TABS_NAV_COM = $(byXpath("//li[@data-tab-control='com']"));
+//    private static final SelenideElement TABS_NAV_IND = $(byXpath("//li[@data-tab-control='ind']"));
+//    private static final SelenideElement TABS_NAV_CRYP = $(byXpath("//li[@data-tab-control='cryp']"));
+//    private static final SelenideElement TABS_NAV_SHAR = $(byXpath("//li[@data-tab-control='shar']"));
+//    private static final SelenideElement TABS_NAV_FX = $(byXpath("//li[@data-tab-control='fx']"));
+//    private static final SelenideElement TABS_NAV_ETF = $(byXpath("//li[@data-tab-control='etf']"));
 
     private static final SelenideElement SCROLL_ELM_STILL_LOOKING = $(byCssSelector(".regSteps.cc-boxLg.mainConstuctor__item.mainConstuctor__item--fullwidth.grey"));
     private static final SelenideElement CREATE_SL_BTN = $(byCssSelector(".regSteps__item.js_signup"));
@@ -99,10 +98,12 @@ public class MainPage {
         BANNER_CFD_BTN_PRACTISE_FOR_FREE_ASIC.click();
     }
 
+    // переделать!!!
     @Step("Выбор банера Discover Pro Trading")
     public void choiceBannerPRO (){
         SCROLL_ELM_MAIN_BANNER.scrollTo();
         BANNER_PRO_ASIC.click();
+
     }
 
     @Step("Клик по кнопке Start Trading")

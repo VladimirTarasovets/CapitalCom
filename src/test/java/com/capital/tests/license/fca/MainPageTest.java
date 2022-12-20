@@ -50,12 +50,6 @@ public class MainPageTest extends BeAfAllFCA {
     }
 
     @Test
-    @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. CRYP")
-    public void checkCRYP () {
-        mainPage.checkTabsNav_CRYP();
-    }
-
-    @Test
     @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. SHAR")
     public void checkSHAR () {
         mainPage.checkTabsNav_SHAR();
