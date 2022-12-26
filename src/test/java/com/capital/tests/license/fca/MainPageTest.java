@@ -9,10 +9,21 @@ public class MainPageTest extends BeAfAllFCA {
     MainPage mainPage = new MainPage();
 
     @Test
-    @DisplayName("Проверка появление поля SignUp в баннере Spread Betting при клике на кнопку Open Account")
+    @Order(1)
+    @DisplayName("Проверка появление поля SignUp в баннере CFD при клике на кнопку Trade Now")
     public void checkSingUP_CFD_BtnTN(){
-        mainPage.choiceBannerSpreadBetting();
-        mainPage.clickBtnOpenAccount();
+        mainPage.choiceBannerCFD();
+        mainPage.clickBtnTN();
+        mainPage.checkSingUpForm();
+    }
+
+    @Test
+    @Order(2)
+    @DisplayName("Проверка появление поля SignUp в баннере CFD при клике на кнопку Practise for free")
+    public void checkSingUP_CFD_BtnPFF(){
+        mainPage.choiceBannerCFD();
+        mainPage.clickBtnPFF_CFD();
+        mainPage.checkSingUpForm();
     }
 
     @Test

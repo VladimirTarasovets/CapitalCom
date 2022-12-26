@@ -9,6 +9,7 @@ public class MainPageTest extends BeAfAllFSA {
     MainPage mainPage = new MainPage();
 
     @Test
+    @Order(1)
     @DisplayName("Проверка появление поля SignUp в баннере CFD при клике на кнопку Trade Now")
     public void checkSingUP_CFD_BtnTN(){
         mainPage.choiceBannerCFD();
@@ -17,6 +18,7 @@ public class MainPageTest extends BeAfAllFSA {
     }
 
     @Test
+    @Order(2)
     @DisplayName("Проверка появление поля SignUp в баннере CFD при клике на кнопку Practise for free")
     public void checkSingUP_CFD_BtnPFF(){
         mainPage.choiceBannerCFD();

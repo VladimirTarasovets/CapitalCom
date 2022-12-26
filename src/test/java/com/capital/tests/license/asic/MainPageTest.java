@@ -11,16 +11,16 @@ public class MainPageTest extends BeAfAllASIC {
     @Test
     @DisplayName("Проверка появление поля SignUp в банере CFD при клике на кнопку Trade Now")
     public void checkSingUP_CFD_BtnTN(){
-        mainPage.choiceBannerCFD_ASIC();
-        mainPage.clickBtnTN_ASIC();
+        mainPage.choiceBannerCFD();
+        mainPage.clickBtnTN();
         mainPage.checkSingUpForm();
     }
 
     @Test
     @DisplayName("Проверка появление поля SignUp в банере CFD при клике на кнопку Practise for free")
     public void checkSingUP_CFD_BtnPFF(){
-        mainPage.choiceBannerCFD_ASIC();
-        mainPage.clickBtnPFF_CFD_ASIC();
+        mainPage.choiceBannerCFD();
+        mainPage.clickBtnPFF_CFD();
         mainPage.checkSingUpForm();
     }
 

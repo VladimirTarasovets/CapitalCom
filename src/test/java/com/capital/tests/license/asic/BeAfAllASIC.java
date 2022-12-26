@@ -1,6 +1,8 @@
 package com.capital.tests.license.asic;
 
 import com.capital.pageObject.HeaderPage;
+import com.capital.pageObject.MainPage;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Step;
@@ -10,22 +12,25 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class BeAfAllASIC {
     HeaderPage headerPage = new HeaderPage();
+    MainPage mainPage = new MainPage();
 
     @BeforeAll
     @Step("Открытие главной страницы сайта")
     public void setUp() {
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true));
         Configuration.headless = true;
 //        Configuration.browserSize = "1920x1080";
         open("https://capital.com/");
         headerPage.languageСhoiceEN();
         headerPage.licenceСhoiceASIC();
+        mainPage.scroll();
+        sleep(1000);
+        headerPage.COOKIE.shouldBe(Condition.visible).click();
+
     }
 
     @AfterAll

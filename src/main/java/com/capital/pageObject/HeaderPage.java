@@ -11,11 +11,12 @@ public class HeaderPage {
 
     private static final SelenideElement MENU = $(byCssSelector(".cc-header__btn.cc-header__btn--burger.js-burger"));
     private static final SelenideElement HEADER_LOGO = $(byCssSelector("div.cc-header__logowrap.flex > a"));
+    public static final SelenideElement COOKIE = $(byCssSelector("#onetrust-accept-btn-handler"));
 
     private static final SelenideElement LANGUAGE_BTN = $(byCssSelector(".cc-header__btn.cc-header__btn--lng.showLg.js-langSwitch"));
-    private static final SelenideElement EN = $(byCssSelector(".cc-flags.cc-flags--gb"));
-    private static final SelenideElement AR = $(byCssSelector(".cc-flags.cc-flags--ab"));
-    private static final SelenideElement ID = $(byCssSelector(".cc-flags.cc-flags--id"));
+    public static final SelenideElement EN = $(byCssSelector(".cc-flags.cc-flags--gb"));
+    public static final SelenideElement AR = $(byCssSelector(".cc-flags.cc-flags--ab"));
+    public static final SelenideElement ID = $(byCssSelector(".cc-flags.cc-flags--id"));
     private static final SelenideElement BG = $(byCssSelector(".cc-flags.cc-flags--bg"));
     private static final SelenideElement CZ = $(byCssSelector(".cc-flags.cc-flags--cz"));
     private static final SelenideElement DA = $(byCssSelector(".cc-flags.cc-flags--dk"));
@@ -44,13 +45,19 @@ public class HeaderPage {
     private static final SelenideElement CN = $(byCssSelector(".cc-flags.cc-flags--cn"));
 
     private static final SelenideElement LICENCE_BTN = $(byCssSelector(".cc-toggleLicense__btn"));
-    private static final SelenideElement LICENCE_ASIC = $(byXpath("//a[@href='https://capital.com/?license=ASIC']"));
-    private static final SelenideElement LICENCE_FCA = $(byXpath("//a[@href='https://capital.com/?license=FCA']"));
-    private static final SelenideElement LICENCE_CYSEC = $(byXpath("//a[@href='https://capital.com/?license=CYSEC']"));
-    private static final SelenideElement LICENCE_NBRB = $(byXpath("//a[@href='https://capital.com/?license=NBRB']"));
-    private static final SelenideElement LICENCE_CCSTV = $(byXpath("//a[@href='https://capital.com/?license=CCSTV']"));
-    private static final SelenideElement LICENCE_SEY = $(byXpath("//a[@href='https://capital.com/?license=SEY']"));
+//    private static final SelenideElement LICENCE_ASIC = $(byXpath("//a[@href='https://capital.com/?license=ASIC']"));
+//    private static final SelenideElement LICENCE_FCA = $(byXpath("//a[@href='https://capital.com/?license=FCA']"));
+//    private static final SelenideElement LICENCE_CYSEC = $(byXpath("//a[@href='https://capital.com/?license=CYSEC']"));
+//    private static final SelenideElement LICENCE_NBRB = $(byXpath("//a[@href='https://capital.com/?license=NBRB']"));
+//    private static final SelenideElement LICENCE_CCSTV = $(byXpath("//a[@href='https://capital.com/?license=CCSTV']"));
+//    private static final SelenideElement LICENCE_SEY = $(byXpath("//a[@href='https://capital.com/?license=SEY']"));
 
+    private static final SelenideElement LICENCE_ASIC = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[1]"));
+    private static final SelenideElement LICENCE_FCA = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[2]"));
+    private static final SelenideElement LICENCE_CYSEC = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[3]"));
+    private static final SelenideElement LICENCE_NBRB = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[4]"));
+    private static final SelenideElement LICENCE_LLC = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[5]"));
+    private static final SelenideElement LICENCE_FSA = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[6]"));
 
     private static final SelenideElement LOGIN = $(byCssSelector("#wg_loginBtn"));
 
@@ -61,62 +68,71 @@ public class HeaderPage {
     private static final SelenideElement CLOSE_SING_UP_FORM = $(byCssSelector(".button-cleared.small.s_cancel"));
 
 
-    @Step("Выбор языка English")
+    @Step("Choice of language")
+    public void languageСhoice (){
+        LANGUAGE_BTN.click();
+    }
+
+    @Step("Choice of English language")
     public void languageСhoiceEN (){
         LANGUAGE_BTN.click();
         EN.click();
     }
-
-    @Step("Выбор языка Русский")
+    @Step("Choice of Russian language")
     public void languageСhoiceRU (){
         LANGUAGE_BTN.click();
         RU.click();
     }
+    @Step("Choice of Arabic language")
+    public void languageСhoiceAR (){
+        LANGUAGE_BTN.click();
+        AR.click();
+    }
+    @Step("Choice of Deutsch language")
+    public void languageСhoiceDE (){
+        LANGUAGE_BTN.click();
+        DE.click();
+    }
 
-    @Step("Выбор лицензии ASIC")
+    @Step("Choice of ASIC license")
     public void licenceСhoiceASIC (){
         LICENCE_BTN.click();
         LICENCE_ASIC.click();
     }
-
-    @Step("Выбор лицензии FCA")
+    @Step("Choice of FCA license")
     public void licenceСhoiceFCA (){
         LICENCE_BTN.click();
         LICENCE_FCA.click();
     }
-
-    @Step("Выбор лицензии CYSEC")
+    @Step("Choice of CYSEC license")
     public void licenceСhoiceCYSEC (){
         LICENCE_BTN.click();
         LICENCE_CYSEC.click();
     }
-
-    @Step("Выбор лицензии NBRB")
+    @Step("Choice of NBRB license")
     public void licenceСhoiceNBRB (){
         LICENCE_BTN.click();
         LICENCE_NBRB.click();
     }
-
-    @Step("Выбор лицензии CCSTV")
-    public void licenceСhoiceCCSTV (){
+    @Step("Choice of LLC license")
+    public void licenceСhoiceLLC (){
         LICENCE_BTN.click();
-        LICENCE_CCSTV.click();
+        LICENCE_LLC.click();
+    }
+    @Step("Choice of FSA license")
+    public void licenceСhoiceFSA(){
+        LICENCE_BTN.click();
+        LICENCE_FSA.click();
     }
 
-    @Step("Выбор лицензии SEY")
-    public void licenceСhoiceSEY (){
-        LICENCE_BTN.click();
-        LICENCE_SEY.click();
-    }
-
-    @Step("Появление поля Login при клике на кнопку Login в header сайта")
+    @Step("The appearance of the LOGIN field when clicking on the LOGIN button in the site HEADER")
     public void loginFieldFormAppears (){
         LOGIN.click();
         CHECK_LOGIN_FORM.shouldBe(Condition.visible);
         CLOSE_LOGIN_UP_FORM.click();
     }
 
-    @Step("Появление поля SignUp при клике на кнопку TradeNow в header сайта")
+    @Step("The appearance of the SignUp field when clicking on the TradeNow button in the site HEADER")
     public void singUpFieldFormAppears (){
         TRADE_NOW.click();
         CHECK_SING_UP_FORM.shouldBe(Condition.visible);

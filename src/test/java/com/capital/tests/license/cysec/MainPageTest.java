@@ -1,6 +1,7 @@
 package com.capital.tests.license.cysec;
 
 import com.capital.pageObject.MainPage;
+import io.qameta.allure.Description;
 import io.qameta.allure.Flaky;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.*;
@@ -11,6 +12,7 @@ public class MainPageTest extends BeAfAllCYSEC {
     MainPage mainPage = new MainPage();
 
     @Test
+    @Order(1)
     @DisplayName("Проверка появление поля SignUp в баннере CFD при клике на кнопку Trade Now")
     public void checkSingUP_CFD_BtnTN(){
         mainPage.choiceBannerCFD();
@@ -19,6 +21,7 @@ public class MainPageTest extends BeAfAllCYSEC {
     }
 
     @Test
+    @Order(2)
     @DisplayName("Проверка появление поля SignUp в баннере CFD при клике на кнопку Practise for free")
     public void checkSingUP_CFD_BtnPFF(){
         mainPage.choiceBannerCFD();
@@ -27,6 +30,7 @@ public class MainPageTest extends BeAfAllCYSEC {
     }
 
     @Test
+    @Order(3)
     @DisplayName("Проверка появление поля SignUp в баннере Best Platform при клике на кнопку Start Trading")
     public void checkSingUP_BP_BtnST(){
         mainPage.choiceBannerBP();
@@ -35,6 +39,7 @@ public class MainPageTest extends BeAfAllCYSEC {
     }
 
     @Test
+    @Order(4)
     @DisplayName("Проверка появление поля SignUp в баннере Best Platform при клике на кнопку Practise for free")
     public void checkSingUP_BP_BtnPFF(){
         mainPage.choiceBannerBP();
@@ -43,48 +48,56 @@ public class MainPageTest extends BeAfAllCYSEC {
     }
 
     @Test
+    @Order(5)
     @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. MTR")
     public void checkMTR () {
         mainPage.checkTabsNav_MTR();
     }
 
     @Test
+    @Order(6)
     @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. COM")
     public void checkCOM () {
         mainPage.checkTabsNav_COM();
     }
 
     @Test
+    @Order(7)
     @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. IND")
     public void checkIND () {
         mainPage.checkTabsNav_IND();
     }
 
     @Test
+    @Order(8)
     @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. CRYP")
     public void checkCRYP () {
         mainPage.checkTabsNav_CRYP();
     }
 
     @Test
+    @Order(9)
     @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. SHAR")
     public void checkSHAR () {
         mainPage.checkTabsNav_SHAR();
     }
 
     @Test
+    @Order(10)
     @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. FX")
     public void checkFX () {
         mainPage.checkTabsNav_FX();
     }
 
     @Test
+    @Order(11)
     @DisplayName("Проверка кнопок Trade в интерактивной таблице виджетов на появление поля SignUp. ETF")
     public void checkETF () {
         mainPage.checkTabsNav_ETF();
     }
 
     @Test
+    @Order(12)
     @DisplayName("Проверка появление поля SignUp в баннере Still Looking For при клике на кнопку Create")
     public void checkCreateBtn(){
         mainPage.clickBtnCreateStillLookingFor();
@@ -92,12 +105,14 @@ public class MainPageTest extends BeAfAllCYSEC {
     }
 
     @Test
+    @Order(13)
     @DisplayName("Проверка кнопок Trade у баннера Slider Fade на появление поля SignUp")
     public void checkSliderFade () {
         mainPage.checkTradeBtnSliderFade();
     }
 
     @Test
+    @Order(14)
     @DisplayName("Проверка появление поля SignUp в баннере Explore our platform при клике на кнопку Try Now")
     public void checkTryNowBtnEOP(){
         mainPage.clickBtnTryNowExploreOurPlatform();
@@ -105,6 +120,7 @@ public class MainPageTest extends BeAfAllCYSEC {
     }
 
     @Test
+    @Order(15)
     @DisplayName("Проверка появление поля SignUp в баннере New to trading? при клике на кнопку Practise for free")
     public void checkPracForFreeBtnNewToTR(){
         mainPage.clickBtnPractiseForFreeNewToTrading();
@@ -112,6 +128,7 @@ public class MainPageTest extends BeAfAllCYSEC {
     }
 
     @Test
+    @Order(16)
     @DisplayName("Проверка появление поля SignUp в баннере Calculator при клике на кнопку Start Trading")
     public void checkStartTradBtnCalc(){
         mainPage.clickBtnStartTradingCalc();
@@ -119,12 +136,14 @@ public class MainPageTest extends BeAfAllCYSEC {
     }
 
     @Test
+    @Order(17)
     @DisplayName("Проверка кнопок Trade у баннера Trader's Dashboard на появление поля SignUp")
     public void checkTradeBtnTradeDashb () {
         mainPage.checkTradeBtnTrDashb();
     }
 
     @Test
+    @Order(18)
     @DisplayName("Проверка появление поля SignUp в баннере Why choose Capital.com? при клике на кнопку Try Now")
     public void checkTryNowBtnWhyCC(){
         mainPage.clickBtnTryNowWhyCapCom();
