@@ -1,0 +1,29 @@
+image: markhobson/maven-chrome
+
+stages:
+  - tests
+  - allure
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+Test:
+  stage: tests
+  allow_failure: true
+  script:
+    - mvn $MAVEN_OPTS clean package
+    - mvn compile test
+  artifacts:
+    when: always
+    paths:
+      - target/allure-results
+
+Allure report:
+  stage: allure
+  script:
+    - mvn io.qameta.allure:allure-maven:report
+    - echo "Allure report live here - https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/target/site/allure-maven-plugin/index.html"
+  artifacts:
+    when: always
+    paths:
+      - target/site/allure-maven-plugin/*

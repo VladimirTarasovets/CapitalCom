@@ -1,18 +1,17 @@
 package com.capital.tests.language;
 
 import com.capital.pageObject.HeaderPage;
-import com.capital.pageObject.Languages;
 import com.capital.pageObject.OldMainPage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.EnumSource;
 
+import java.time.Duration;
+
+import static com.capital.pageObject.HeaderPage.COOKIE;
 import static com.codeborne.selenide.Selenide.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -31,10 +30,8 @@ public class OldMainPageTests {
         headerPage.languageСhoiceAR();
         headerPage.licenceСhoiceASIC();
         oldMainPage.scroll();
-        sleep(2000);
-        headerPage.COOKIE.shouldBe(Condition.visible).click();
+        COOKIE.shouldBe(Condition.visible, Duration.ofSeconds(7)).click();
     }
-
 
     @AfterAll
     @Step("Закрытие браузера")
