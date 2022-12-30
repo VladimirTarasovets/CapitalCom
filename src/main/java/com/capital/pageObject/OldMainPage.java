@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class OldMainPage {
 
-    private static final SelenideElement SCROLL_ELM_BANNER = $(byCssSelector(".banner--first-wrap"));
+    private static final SelenideElement SCROLL_ELM_BANNER = $(byCssSelector(".banner--video.bDefault._bDark"));
     private static final SelenideElement CREATE_AC_MAIN_BTN = $(byCssSelector(".btn.btn--darkText.hideSm.__cp_b.__cp_bs.ln-auto"));
     public static final SelenideElement TRY_DEMO_BTN = $(byCssSelector(".btn.btn--empty.ln-auto._demo.__cp_b.__cp_bs"));
 
@@ -53,7 +53,7 @@ public class OldMainPage {
     private static final SelenideElement CLOSE_SING_UP_FORM = $(byCssSelector(".button-cleared.small.s_cancel"));
 
     public void scroll (){
-        SCROLL_ELM_TRADE_NOW_BTN.scrollTo();
+        SCROLL_ELM_BANNER.scrollTo();
     }
 
     @Step("The appearance of the SignUp form")
