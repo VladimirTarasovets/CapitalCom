@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class OldMainPage {
 
-    private static final SelenideElement SCROLL_ELM_BANNER = $(byCssSelector(".banner--video.bDefault._bDark"));
+    private static final SelenideElement SCROLL_ELM_BANNER = $(byCssSelector(".banner--video.bDefault"));
     private static final SelenideElement CREATE_AC_MAIN_BTN = $(byCssSelector(".btn.btn--darkText.hideSm.__cp_b.__cp_bs.ln-auto"));
     public static final SelenideElement TRY_DEMO_BTN = $(byCssSelector(".btn.btn--empty.ln-auto._demo.__cp_b.__cp_bs"));
 

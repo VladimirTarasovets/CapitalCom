@@ -44,15 +44,15 @@ public class TestTradeBtnsWidgetTable extends Base {
         oldMainPage.checkTabsNav_IND();
     }
 
-    @ParameterizedTest(name = "{displayName}. {1}")
-    @CsvFileSource(resources = "/FCA.csv")
-    @Order(4)
-    @DisplayName("Crypto")
-    public void checkSignUPFormInTheInteractiveWidgetTableCRYP(String license, String logLicense){
-        open("https://capital.com/" + license);
-        String indexLanguage = logLicense;
-        oldMainPage.checkTabsNav_CRYP();
-    }
+//    @ParameterizedTest(name = "{displayName}. {1}")
+//    @CsvFileSource(resources = "/FCA.csv")
+//    @Order(4)
+//    @DisplayName("Crypto")
+//    public void checkSignUPFormInTheInteractiveWidgetTableCRYP(String license, String logLicense){
+//        open("https://capital.com/" + license);
+//        String indexLanguage = logLicense;
+//        oldMainPage.checkTabsNav_CRYP();
+//    }
 
     @ParameterizedTest(name = "{displayName}. {1}")
     @CsvFileSource(resources = "/FCA.csv")

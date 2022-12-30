@@ -68,34 +68,27 @@ public class MainPageTest extends BeAfAllFCA {
 
     @Test
     @Order(8)
-    @DisplayName("Checking the Trade buttons in the interactive widget table for the appearance of the SignUp field. CRYP")
-    public void checkCRYP () {
-        mainPage.checkTabsNav_CRYP();
-    }
-
-    @Test
-    @Order(9)
     @DisplayName("Checking the Trade buttons in the interactive widget table for the appearance of the SignUp field. SHAR")
     public void checkSHAR () {
         mainPage.checkTabsNav_SHAR();
     }
 
     @Test
-    @Order(10)
+    @Order(9)
     @DisplayName("Checking the Trade buttons in the interactive widget table for the appearance of the SignUp field. FX")
     public void checkFX () {
         mainPage.checkTabsNav_FX();
     }
 
     @Test
-    @Order(11)
+    @Order(10)
     @DisplayName("Checking the Trade buttons in the interactive widget table for the appearance of the SignUp field. ETF")
     public void checkETF () {
         mainPage.checkTabsNav_ETF();
     }
 
     @Test
-    @Order(12)
+    @Order(11)
     @DisplayName("Checking the appearance of the SignUp field in the Still Looking For banner when clicking on the Create button")
     public void checkCreateBtn(){
         mainPage.clickBtnCreateStillLookingFor();
@@ -103,14 +96,14 @@ public class MainPageTest extends BeAfAllFCA {
     }
 
     @Test
-    @Order(13)
+    @Order(12)
     @DisplayName("Checking the Trade buttons at the Slider Fade banner for the appearance of the SignUp field")
     public void checkSliderFade () {
         mainPage.checkTradeBtnSliderFade();
     }
 
     @Test
-    @Order(14)
+    @Order(13)
     @DisplayName("Checking the appearance of the SignUp field in the Explore our platform banner when clicking on the Try Now button")
     public void checkTryNowBtnEOP(){
         mainPage.clickBtnTryNowExploreOurPlatform();
@@ -118,7 +111,7 @@ public class MainPageTest extends BeAfAllFCA {
     }
 
     @Test
-    @Order(15)
+    @Order(14)
     @DisplayName("Checking the appearance of the SignUp field in the banner New to trading? when clicking on the Practice for free button")
     public void checkPracForFreeBtnNewToTR(){
         mainPage.clickBtnPractiseForFreeNewToTrading();
@@ -126,7 +119,7 @@ public class MainPageTest extends BeAfAllFCA {
     }
 
     @Test
-    @Order(16)
+    @Order(15)
     @DisplayName("Checking the appearance of the SignUp field in the Calculator banner when clicking on the Start Trading button")
     public void checkStartTradBtnCalc(){
         mainPage.clickBtnStartTradingCalc();
@@ -134,14 +127,14 @@ public class MainPageTest extends BeAfAllFCA {
     }
 
     @Test
-    @Order(17)
+    @Order(16)
     @DisplayName("Checking the Trade buttons on the Trader's Dashboard banner for the SignUp field")
     public void checkTradeBtnTradeDashb () {
         mainPage.checkTradeBtnTrDashb();
     }
 
     @Test
-    @Order(18)
+    @Order(17)
     @DisplayName("Checking the appearance of the SignUp field in the banner Why choose Capital.com? when you click on the Try Now button")
     public void checkTryNowBtnWhyCC(){
         mainPage.clickBtnTryNowWhyCapCom();
