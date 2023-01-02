@@ -18,6 +18,10 @@ Test:
     paths:
       - target/allure-results
 
+# mvn test -Dtest="НАЗВАНИЕ ТЕСТИРУЕМОГО КЛАССА"
+# mvn test -Dtest="HeaderPageTest"
+# mvn compile exec:java -Dexec.mainClass="com.capital.tests.enLanguage.StartTestsEnLanguageAllLicenses.java"
+
 Allure report:
   stage: allure
   script:

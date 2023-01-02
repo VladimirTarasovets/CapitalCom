@@ -5,6 +5,6 @@ import org.junit.platform.suite.api.SelectPackages;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
-@SelectPackages("com.capital.tests")
-public class TestPackages {
+@SelectPackages("com.capital.tests.otherLanguages.fca")
+public class StartTestsFCA {
 }
