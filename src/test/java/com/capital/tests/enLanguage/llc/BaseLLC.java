@@ -1,4 +1,4 @@
-package com.capital.tests.enLanguage.cysec;
+package com.capital.tests.enLanguage.llc;
 
 import com.capital.pageObject.HeaderPage;
 import com.capital.pageObject.MainPage;
@@ -14,7 +14,7 @@ import java.time.Duration;
 import static com.capital.pageObject.HeaderPage.COOKIE;
 import static com.codeborne.selenide.Selenide.*;
 
-public class BeAfAllCYSEC {
+public class BaseLLC {
     HeaderPage headerPage = new HeaderPage();
     MainPage mainPage = new MainPage();
 
@@ -25,7 +25,7 @@ public class BeAfAllCYSEC {
         Configuration.headless = true;
         open("https://capital.com/");
         headerPage.languageСhoiceEN();
-        headerPage.licenceСhoiceCYSEC();
+        headerPage.licenceСhoiceLLC();
         mainPage.scroll();
         COOKIE.shouldBe(Condition.visible, Duration.ofSeconds(7)).click();
     }

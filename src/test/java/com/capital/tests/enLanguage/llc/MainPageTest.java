@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayName("Checking the main page of the site. LLC_EN")
-public class MainPageTest extends BeAfAllLLC {
+public class MainPageTest extends BaseLLC {
     MainPage mainPage = new MainPage();
 
     @Test

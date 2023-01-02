@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayName("Checking the site header. FCA_EN")
-public class HeaderPageTest extends BeAfAllFCA {
+public class HeaderPageTest extends BaseFCA {
     HeaderPage headerPage = new HeaderPage();
 
     @Test

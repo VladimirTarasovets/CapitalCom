@@ -14,7 +14,7 @@ import java.time.Duration;
 import static com.capital.pageObject.HeaderPage.COOKIE;
 import static com.codeborne.selenide.Selenide.*;
 
-public class BeAfAllNBRB {
+public class BaseNBRB {
     HeaderPage headerPage = new HeaderPage();
     MainPage mainPage = new MainPage();
 

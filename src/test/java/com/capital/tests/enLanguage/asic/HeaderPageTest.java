@@ -1,13 +1,12 @@
 package com.capital.tests.enLanguage.asic;
 
 import com.capital.pageObject.HeaderPage;
-import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DisplayName("Checking the site header. ASIC_EN")
-public class HeaderPageTest extends BeAfAllASIC {
+public class HeaderPageTest extends BaseASIC {
     HeaderPage headerPage = new HeaderPage();
 
     @Test

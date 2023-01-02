@@ -1,4 +1,4 @@
-package com.capital.tests.enLanguage.asic;
+package com.capital.tests.enLanguage.cysec;
 
 import com.capital.pageObject.HeaderPage;
 import com.capital.pageObject.MainPage;
@@ -7,15 +7,14 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 
 import static com.capital.pageObject.HeaderPage.COOKIE;
 import static com.codeborne.selenide.Selenide.*;
 
-public class BeAfAllASIC {
+public class BaseCYSEC {
     HeaderPage headerPage = new HeaderPage();
     MainPage mainPage = new MainPage();
 
@@ -26,7 +25,7 @@ public class BeAfAllASIC {
         Configuration.headless = true;
         open("https://capital.com/");
         headerPage.languageСhoiceEN();
-        headerPage.licenceСhoiceASIC();
+        headerPage.licenceСhoiceCYSEC();
         mainPage.scroll();
         COOKIE.shouldBe(Condition.visible, Duration.ofSeconds(7)).click();
     }
