@@ -21,6 +21,8 @@ public class MainPage {
 
     private static final SelenideElement BANNER_PRO_ASIC = $(byXpath("//button[@data-type='topbanner_pro_au_slider']"));
     private static final SelenideElement BANNER_PRO_START_TRADING = $(byXpath("//a[@data-type='topbanner_pro_au_demo']"));
+    private static final SelenideElement PAGE_SIGN_UP = $(byCssSelector("#s2_f_email"));
+
     //
     // FCA
     private static final SelenideElement BANNER_SPREAD_BETTING = $(byXpath("//button[@data-type='topbanner_spread_betting_slider']"));
@@ -89,26 +91,19 @@ public class MainPage {
         SCROLL_ELM_MAIN_BANNER.scrollTo();
     }
 
-    // для ASIC
-    @Step("Choosing a CFD banner")
-    public void choiceBannerCFD_ASIC (){
-        SCROLL_ELM_MAIN_BANNER.scrollTo();
-        BANNER_CFD_ASIC.click();
-    }
 
-    // переделать!!!
     @Step("Choosing a Discover Pro Trading banner")
     public void choiceBannerPRO (){
         SCROLL_ELM_MAIN_BANNER.scrollTo();
         BANNER_PRO_ASIC.click();
-
     }
 
     @Step("Click on the Start Trading button")
     public void clickBtnSTPRO (){
         BANNER_PRO_START_TRADING.click();
+        PAGE_SIGN_UP.shouldBe(Condition.visible, Duration.ofSeconds(10));
+        back();
     }
-    //
 
     @Step("Choosing a CFD banner")
     public void choiceBannerCFD (){

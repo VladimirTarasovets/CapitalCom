@@ -5,6 +5,6 @@ import org.junit.platform.suite.api.SelectPackages;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
-@SelectPackages("com.capital.tests.enLanguage")
+@SelectPackages(value = "com.capital.tests.enLanguage")
 public class StartTestsEnLanguageAllLicenses {
 }

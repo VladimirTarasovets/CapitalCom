@@ -27,7 +27,6 @@ public class MainPageTest extends BaseASIC {
         mainPage.checkSingUpForm();
     }
 
-    @Disabled
     @Test
     @Order(3)
     @DisplayName("Checking the appearance of the SignUp field in the Discover Pro Trading banner when clicking on the Start Trading button")
