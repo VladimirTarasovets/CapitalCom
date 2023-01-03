@@ -1,8 +1,6 @@
 package com.capital.pageObject;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.*;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.*;

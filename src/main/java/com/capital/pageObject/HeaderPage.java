@@ -14,9 +14,9 @@ public class HeaderPage {
     public static final SelenideElement COOKIE = $(byCssSelector("#onetrust-accept-btn-handler"));
 
     private static final SelenideElement LANGUAGE_BTN = $(byCssSelector(".cc-header__btn.cc-header__btn--lng.showLg.js-langSwitch"));
-    public static final SelenideElement EN = $(byCssSelector(".cc-flags.cc-flags--gb"));
-    public static final SelenideElement AR = $(byCssSelector(".cc-flags.cc-flags--ab"));
-    public static final SelenideElement ID = $(byCssSelector(".cc-flags.cc-flags--id"));
+    private static final SelenideElement EN = $(byCssSelector(".cc-flags.cc-flags--gb"));
+    private static final SelenideElement AR = $(byCssSelector(".cc-flags.cc-flags--ab"));
+    private static final SelenideElement ID = $(byCssSelector(".cc-flags.cc-flags--id"));
     private static final SelenideElement BG = $(byCssSelector(".cc-flags.cc-flags--bg"));
     private static final SelenideElement CZ = $(byCssSelector(".cc-flags.cc-flags--cz"));
     private static final SelenideElement DA = $(byCssSelector(".cc-flags.cc-flags--dk"));
@@ -45,12 +45,6 @@ public class HeaderPage {
     private static final SelenideElement CN = $(byCssSelector(".cc-flags.cc-flags--cn"));
 
     private static final SelenideElement LICENCE_BTN = $(byCssSelector(".cc-toggleLicense__btn"));
-//    private static final SelenideElement LICENCE_ASIC = $(byXpath("//a[@href='https://capital.com/?license=ASIC']"));
-//    private static final SelenideElement LICENCE_FCA = $(byXpath("//a[@href='https://capital.com/?license=FCA']"));
-//    private static final SelenideElement LICENCE_CYSEC = $(byXpath("//a[@href='https://capital.com/?license=CYSEC']"));
-//    private static final SelenideElement LICENCE_NBRB = $(byXpath("//a[@href='https://capital.com/?license=NBRB']"));
-//    private static final SelenideElement LICENCE_CCSTV = $(byXpath("//a[@href='https://capital.com/?license=CCSTV']"));
-//    private static final SelenideElement LICENCE_SEY = $(byXpath("//a[@href='https://capital.com/?license=SEY']"));
 
     private static final SelenideElement LICENCE_ASIC = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[1]"));
     private static final SelenideElement LICENCE_FCA = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[2]"));
@@ -60,38 +54,17 @@ public class HeaderPage {
     private static final SelenideElement LICENCE_FSA = $(byXpath("//div[@class='cc-toggleLicense__wrap']/a[6]"));
 
     private static final SelenideElement LOGIN = $(byCssSelector("#wg_loginBtn"));
-
-    private static final SelenideElement TRADE_NOW = $(byCssSelector(".cc-header__signup.btn.btn--sm.btn--darkText.hideSm.js_signup"));
     private static final SelenideElement CHECK_LOGIN_FORM = $(byCssSelector("#l_f_email"));
     private static final SelenideElement CLOSE_LOGIN_UP_FORM = $(byCssSelector(".button-cleared.small.l_cancel"));
+    private static final SelenideElement TRADE_NOW = $(byCssSelector(".cc-header__signup.btn.btn--sm.btn--darkText.hideSm.js_signup"));
     private static final SelenideElement CHECK_SING_UP_FORM = $(byCssSelector(".signup-form"));
     private static final SelenideElement CLOSE_SING_UP_FORM = $(byCssSelector(".button-cleared.small.s_cancel"));
 
-
-    @Step("Choice of language")
-    public void languageСhoice (){
-        LANGUAGE_BTN.click();
-    }
 
     @Step("Choice of English language")
     public void languageСhoiceEN (){
         LANGUAGE_BTN.click();
         EN.click();
-    }
-    @Step("Choice of Russian language")
-    public void languageСhoiceRU (){
-        LANGUAGE_BTN.click();
-        RU.click();
-    }
-    @Step("Choice of Arabic language")
-    public void languageСhoiceAR (){
-        LANGUAGE_BTN.click();
-        AR.click();
-    }
-    @Step("Choice of Deutsch language")
-    public void languageСhoiceDE (){
-        LANGUAGE_BTN.click();
-        DE.click();
     }
 
     @Step("Choice of ASIC license")

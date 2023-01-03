@@ -1,9 +1,6 @@
 package com.capital.pageObject;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.HoverOptions;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.*;
 import io.qameta.allure.Step;
 
 import java.time.Duration;
@@ -33,7 +30,6 @@ public class MainPage {
 
     private static final SelenideElement CHECK_SING_UP_FORM = $(byCssSelector(".signup-form"));
     private static final SelenideElement CLOSE_SING_UP_FORM = $(byCssSelector(".button-cleared.small.s_cancel"));
-
 
     // OLD design
 //    private static final SelenideElement TABS_NAV_MTR = $(byXpath("//div[@class='tab-list ']/a[@data-type='Most']"));
